@@ -1,4 +1,4 @@
-# Twibot-22_HeterogeneousGraphTransformer
+# Bot-or-User_Twitter-Classification
 
 Thus the focus of this notebook shifts from classifying based on text or images towards the behavioral and interaction patterns in social networks as well as user metadata to distinguish real from fake users. <br> These patterns are more difficult to camouflage, and thus are a promising direction of research.
 
