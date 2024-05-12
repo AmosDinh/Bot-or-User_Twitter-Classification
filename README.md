@@ -1,12 +1,16 @@
 # Bot-or-User_Twitter-Classification
 
-Thus the focus of this notebook shifts from classifying based on text or images towards the behavioral and interaction patterns in social networks as well as user metadata to distinguish real from fake users. <br> These patterns are more difficult to camouflage, and thus are a promising direction of research.
+In this repository the Heterogeneous Graph Transformer[1] is applied on the TwiBot-22 Twitter dataset[2] to distinguish bots from real users on the platform.
+
+The focus of this project diverges from classifying based on text or images towards the behavioral and interaction patterns in social networks as well as user metadata to distinguish real from fake users. <br> These patterns are more difficult to camouflage, and thus are a promising direction of research.
 
 **Because:**<br>
 With the increasing effectiveness as well as ease of access to generative AI, such as text and image generation models more sophisticated impersonations and generation of fake media can be achieved, difficult or impossible to distinguish from real content. Malicious-bot operators have gained access to multi-billion dollar means which camouflage their bots' behavior. The generative models, trained with human feedback , effectively to be indistinguishable from real content, diminish the out-of-distribution shift which was previously easily detectable. 
 
 Expermints can be found in the main.ipynb.
-
+<br><br>
+[1] https://arxiv.org/abs/2003.01332 <br>
+[2] https://arxiv.org/abs/2206.04564 
 
 ## Experimental Results
 Below, the training loss and validation F1 score are shown (Figure 1 and 2). The model is trained for 10 epochs.
