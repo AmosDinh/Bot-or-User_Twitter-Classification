@@ -8,7 +8,7 @@ The focus of this project diverges from classification based on text or images -
 With the increasing effectiveness as well as ease of access to generative AI, such as text and image generation models more sophisticated impersonations and generation of fake media can be achieved, difficult or impossible to distinguish from real content. Malicious-bot operators have gained access to multi-billion dollar means which camouflage their bots' behavior. The generative models, trained with human feedback , effectively to be indistinguishable from real content, diminish the out-of-distribution shift which was previously easily detectable. 
 
 Experiments can be found in the main.ipynb.
-<br>
+<br><br>
 [1] https://arxiv.org/abs/2003.01332 <br>
 [2] https://arxiv.org/abs/2206.04564 
 
