@@ -17,8 +17,8 @@ Below, the training loss and validation F1 score are shown (Figure 1 and 2). The
 One training epoch amounts to 6.8 hours, and total training time to 68 hours on a NVIDIA P100 GPU.
 
 One training epoch corresponds to 810,000 node classifications. The model is trained with the Adam optimizer and a learning rate of 0.0002 and a minibatch size of 32. The evaluation is done on the remaining 90,000 nodes, which the model has not seen.
-![alt text](image-1.png)
-![Performance](image.png)
+![Training loss](image-3.png)
+![Testing performance](image-2.png)
 
 ## Discussion
 The model achieves an F1 score of more than 69%, outperforming all models from the original Twibot-22 paper (The best model achieves an F1 score of 58%).
