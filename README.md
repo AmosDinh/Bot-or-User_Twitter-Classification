@@ -1,4 +1,4 @@
-# Bot-or-User_Twitter-Classification
+# Bot-or-User? Twitter Classification
 
 In this repository the Heterogeneous Graph Transformer [1] is applied on the TwiBot-22 Twitter dataset [2] to distinguish bots from real users on the platform.
 
