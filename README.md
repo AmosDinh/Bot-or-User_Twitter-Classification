@@ -13,18 +13,18 @@ Experiments can be found in the main.ipynb.
 [2] https://arxiv.org/abs/2206.04564 
 
 ## Experimental Results
-Below, the training loss and validation F1 score are shown (Figure 1 and 2). The model is trained for 10 epochs.
-One training epoch amounts to 6.8 hours, and total training time to 68 hours on a NVIDIA P100 GPU.
+Below, the training loss and validation F1 score are shown (Figure 1 and 2).<br>
+In the loss, equal class weighting for positives and negatives is applied.<br>
+The model is trained for 25 epochs.
+This amounts to 50 hours on a NVIDIA P100 GPU.
 
-One training epoch corresponds to 810,000 node classifications. The model is trained with the Adam optimizer and a learning rate of 0.0002 and a minibatch size of 32. The evaluation is done on the remaining 90,000 nodes, which the model has not seen.
-![Training loss](image-3.png)
-![Testing performance](image-2.png)
+One training epoch corresponds to 300,000 node classifications. The model is trained with the Adam optimizer and a learning rate of 0.0002 and a minibatch size of 32. The evaluation is done on the remaining 90,000 test set nodes, which the model has not seen.<br><br><br>
+![Testing performance](image.png)<br><br><br>
+The result (37.1% F1, 0.69% precision,
+0.25% recall) is  short a few percent from the Twibot-22 paper (39.6%) (maybe because the model uses only graph-based information, opposed to the paper's implemementation).<br>
 
-## Discussion
-The model achieves an F1 score of more than 69%, outperforming all models from the original Twibot-22 paper (The best model achieves an F1 score of 58%).
-Interestingly, their implementation of the Heterogeneous Graph Transformer architecture only achieves an F1 of 39%. Since a naive logistic regression achieves an F1 score of 43% (as evaluated earlier), the performance of 69% is plausible.
+The naive logistic regression baseline (user vector + degree counts from the graph) outperforms the model with an F1 of 43%, (30% precision, 77% recall).<br>
+Since the GNN achieves similar results to the Twibot-22 paper, despite not knowing their exact implementation we can guessably observe that the logistic regression baseline outperforms over 58% of the algorithms (17/29) implemented for demonstration of the Twibot-22 dataset.<br><br> 
 
-Opposed to the original implementation in Twibot-22, we only utilize the graph information (relationship information) as initial node features. The original implementation also leverages text information from user descriptions and tweets as well as numerical and categorical user property information.
+The GNN might show more desirable performance for real-world application compared to the logistic regression model without any tuning (0.69% vs 30% precision).
 
-Unfortunately, the original paper lacks a description of data splitting and the training approach or schedule. The performance deviation could be caused by insufficient training in the original paper's case.
-Inspecting Figure 2, the F1 score only increases after the model has trained by making at least 810,000 classifications (one epoch). Perhaps the authors limited the training, since the main subject of the Twibot-22 paper is the dataset itself, and the authors had to compare many different models. They provide the testing performance in comparison to earlier datasets in the field, such that their results are still interpretable.
